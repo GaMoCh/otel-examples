@@ -1,0 +1,15 @@
+*
+
+!internal/
+!internal/**
+pb/
+
+!go.mod
+!go.sum
+
+!Makefile
+!README.md
+!.gitignore
+
+!docker-compose.yml
+!otel-collector-config.yaml

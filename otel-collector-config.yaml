@@ -1,0 +1,22 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+
+exporters:
+  jaeger:
+    endpoint: jaeger:14250
+    tls:
+      insecure: true
+  zipkin:
+    endpoint: "http://zipkin:9411/api/v2/spans"
+
+processors:
+  batch:
+
+service:
+  pipelines:
+    traces:
+      receivers: [ otlp ]
+      exporters: [ jaeger, zipkin ]
+      processors: [ batch ]
